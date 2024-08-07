@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <img src="/SupremeAcai/src/Logotipo_para_Loja_de_Açaí_Moderno_Roxo__4_-removebg-preview.png"
+                alt="Logo da Supreme Açaí">
+            <h1>Supreme Açaí</h1>
+            <h2>Slogan</h2>
+
+            <nav>
+                <a href="/index.html"><button>Home</button></a>
+                <a href="https://www.instagram.com/supremeacaiofc" target="_blank"><button>Instagram</button></a>
+                <a href="https://wa.me/5584991847301?text=Gostaria%20de%20fazer%20um%20pedido."
+                    target="_blank"><button>Contato</button></a>
+            </nav>
+        </header>
+        <main>
+
+            <Section id="promo">
+                <ul>
+                    <li>
+                        <h3>Supreme Promo Imperdível</h3>
+
+                        <h4 id="promo1">Supreme promo 500ml</h4><img src="/SupremeAcai/src/7945eca8f65f063e857ca3f578b2ff79.jpg"
+                            width="200px" alt="Supreme Promo 500ml" id="promo1">
+
+                        <p>Itens que vão no açaí</p>
+                        <p>Serve 1 pessoa (aprox. 500g)</p>
+                    </li>
+                    <li>
+
+                        <h4 id="promo2">Supreme Duplo</h4>
+                        <img src="/SupremeAcai/src/62c37cd0a69a8bbce87a124f0713c08e.jpg" alt="açai duplo de 300ml" id="promo2">
+                        <p>Itens que vão no açaí</p>
+                        <p>Serve 2 pessoas(aprox. 600g)</p>
+                    </li>
+                </ul>
+            </Section>
+
+            <Section id="Monte o seu">
+                <ul>
+                    <li>
+                        <h3>Monte o seu açaí</h3>
+
+                        <h4><a href="/adicionais300ml.html">Açaí 300ml</h4>
+                        <img src="/SupremeAcai/src/6411c283-15a4-423c-bfd3-26aeac1e09ff.jpg" width="320px"
+                            alt="Açaí de 300ml"></a>
+                        <h4><a href="/adicionais500ml.html">Açaí 500ml</h4>
+                        <img src="/SupremeAcai/src/167216113363ab276d10b50_75_75.jpeg" alt=""></a>
+                    </li>
+                </ul>
+            </Section>
+        </main>
+
+        <footer>
+            <p>&copy; 2024 Supreme Açaí</p>
+            <p>Desenvolvido por: <a href="https://www.instagram.com/devesdrasjales" target="_blank">DevEsdrasJales</a>
+        </footer>
+    </div>
+</body>
+
+<script>
+    document.getElementById('promo1').addEventListener('click', () => {
+
+            const mensagem = `Olá, gostaria de aproveitar a Supreme Promo 500ml!!`;
+            const urlWhatsApp = `https://wa.me/5584991847301?text=${encodeURIComponent(mensagem)}`;
+
+            window.open(urlWhatsApp, '_blank');
+        });
+
+    document.getElementById('promo2').addEventListener('click', () => {
+
+const mensagem = `Olá, gostaria de aproveitar a Supreme Duplo 300ml!!`;
+const urlWhatsApp = `https://wa.me/5584991847301?text=${encodeURIComponent(mensagem)}`;
+
+window.open(urlWhatsApp, '_blank');
+});
+</script>
+
+</html>

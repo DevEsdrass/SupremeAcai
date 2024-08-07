@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <img src="/SupremeAcai/src/Logotipo_para_Loja_de_Açaí_Moderno_Roxo__4_-removebg-preview.png"
+                alt="Logo da Supreme Açaí">
+            <h1>Supreme Açaí</h1>
+            <h2>Slogan</h2>
+
+            <nav>
+                <a href="/index.html"><button>Home</button></a>
+                <a href="https://www.instagram.com/supremeacaiofc" target="_blank"><button>Instagram</button></a>
+                <a href="https://wa.me/5584991847301?text=Gostaria%20de%20fazer%20um%20pedido."
+                    target="_blank"><button>Contato</button></a>
+            </nav>
+        </header>
+        <main>
+
+            <Section id="Adicionais">
+                <h2>Adicionais Açaí 300ml</h2>
+                <ul>
+                    <li>
+
+                        <h3>Cremes</h3>
+                        <h4>Escolha até 2 opções</h4>
+                        <label><input type="checkbox" name="Cremes" value="Creme de Ninho">Creme de Ninho</label>
+                        <label"><input type="checkbox" name="Cremes" value="Creme de Ovomaltine">Creme de
+                            Ovomaltine</label>
+                            <label><input type="checkbox" name="Cremes" value="Creme de Morango">Creme de
+                                Morango</label>
+                    </li>
+
+                    <li>
+                        <h3>Frutas</h3>
+                        <h4>Escolha até 2 opções</h4>
+                        <label><input type="checkbox" name="Frutas" value="Morango">Morango</label>
+                        <label><input type="checkbox" name="Frutas" value="Banana">Banana</label>
+                    </li>
+
+                    <li>
+                        <h3>Secos</h3>
+                        <h4>Escolha até 5 opções</h4>
+                        <label><input type="checkbox" name="Secos" value="Castanha">Castanha</label>
+                        <label><input type="checkbox" name="Secos" value="Leite em pó">Leite em pó</label>
+                        <label><input type="checkbox" name="Secos" value="Biscoito Oreo">Biscoito Oreo</label>
+                        <label><input type="checkbox" name="Secos">Coco Ralado</label>
+                        <label><input type="checkbox" name="Secos" value="Amendoim">Amendoim</label>
+                        <label><input type="checkbox" name="Secos" value="Jujuba">Jujuba</label>
+                        <label><input type="checkbox" name="Secos" value="Chocopower">Chocopower</label>
+                        <label><input type="checkbox" name="Secos" value="Paçoca">Paçoca</label>
+                        <label><input type="checkbox" name="Secos" value="Farinha Lactea">Farinha Lactea</label>
+                        <label><input type="checkbox" name="Secos" value="Ovomaltine">Ovomaltine</label>
+                        <label><input type="checkbox" name="Secos" value="Gotas de Chocolate">Gotas de Chocolate</label>
+                        <label><input type="checkbox" name="Secos" value="Granola">Granola</label>
+                        <label><input type="checkbox" name="Secos" value="Disqueti">Disqueti</label>
+                        <label><input type="checkbox" name="Secos" value="Moedas de Chocolate Preto">Moedas de Chocolate
+                            Preto</label>
+                        <label><input type="checkbox" name="Secos" value="Moedas de Chocolate Branco">Moedas de
+                            Chocolate Branco</label>
+                    </li>
+
+                    <li>
+                        <h3>Coberturass</h3>
+                        <h4>Escolha até 2 opções</h4>
+                        <label><input type="checkbox" name="Coberturas" value="Nutella">Nutella</label>
+                        <label><input type="checkbox" name="Coberturas" value="Mel">Mel</label></p>
+                        <label><input type="checkbox" name="Coberturas" value="Calda de Morango">Calda de
+                            Morango</label>
+                        <label><input type="checkbox" name="Coberturas" value="Calda de Chocolate">Calda de
+                            Chocolate</label>
+                        <label><input type="checkbox" name="Coberturas" value="Leite Condensado">Leite
+                            Condensado</label>
+                    </li>
+                    <ul>
+
+                        <div class="observacoes">
+                            <h3>Observações Adicionais</h3>
+                            <textarea name="observacoes" rows="4" cols="50"
+                                placeholder="Digite suas observações aqui..." id=""></textarea>
+                        </div>
+
+                        <button id="enviarPedido">Enviar Pedido</button>
+        </main>
+
+        <footer>
+            <p>&copy; 2024 Supreme Açaí</p>
+            <p>Desenvolvido por: <a href="https://www.instagram.com/devesdrasjales" target="_blank">DevEsdrasJales</a>
+        </footer>
+    </div>
+
+    <script>
+        function limitSelecion(category, limit) {
+            const checkboxes = document.querySelectorAll(`input[name='${category}']`);
+            checkboxes.forEach(checkbox => {
+                checkbox.addEventListener('change', () => {
+                    const checkedCheckboxes = document.querySelectorAll(`input[name='${category}']:checked`);
+                    if (checkedCheckboxes.length > limit) {
+                        checkbox.checked = false;
+                        alert(`Você só pode selecionar até ${limit} opções de ${category}.`);
+                    }
+                });
+            });
+
+        }
+
+
+        function getSelectedItems(name) {
+            const selectedItems = [];
+            document.querySelectorAll(`input[name='${name}']:checked`).forEach(checkbox => {
+                selectedItems.push(checkbox.value);
+            });
+            return selectedItems.join(', ');
+        }
+
+        document.getElementById('enviarPedido').addEventListener('click', () => {
+            const Cremes = getSelectedItems('Cremes');
+            const Frutas = getSelectedItems('Frutas');
+            const Secos = getSelectedItems('Secos');
+            const Coberturas = getSelectedItems('Coberturas');
+            const observacoes = document.querySelector('textarea[name="observacoes"]').value;
+
+            const mensagem = `Pedido de Açaí 300ml:\n\nCremes: ${Cremes}\nFrutas: ${Frutas}\nSecos: ${Secos}\nCoberturas: ${Coberturas}\n\nObservações Adicionais: ${observacoes}`;
+            const urlWhatsApp = `https://wa.me/5584991847301?text=${encodeURIComponent(mensagem)}`;
+
+            window.open(urlWhatsApp, '_blank');
+        });
+
+        limitSelecion('Cremes', 2);
+        limitSelecion('Frutas', 2);
+        limitSelecion('Secos', 5);
+        limitSelecion('Coberturas', 2);
+    </script>
+</body>
+
+</html>
